@@ -1,0 +1,16 @@
+site_name: Packet & Pen Docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Identity & Access Control:
+    - Overview: identity-access-control/index.md
+  - Network Automation:
+    - Overview: network-automation/index.md
+  - Performance Testing: 
+    - Overview: performance-testing/index.md
+  - Infrastructure & DevOps:
+    - Overview: infrastructure-devops/index.md
+  - Bog:
+    - Case Studies: blog/case-studies.md
+
