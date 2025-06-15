@@ -1,16 +1,27 @@
 site_name: Packet & Pen Docs
 theme:
   name: material
+  features:
+    - content.code.copy
+    - content.code.annotate
+extra_css:
+  - css/terminal.css
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - codehilite:
+      -linenums: true
 nav:
   - Home: index.md
   - Identity & Access Control:
-    - Overview: identity-access-control/index.md
+    - Radius Server w/ GUI: identity-access-control/index.md
   - Network Automation:
     - Overview: network-automation/index.md
-  - Performance Testing: 
+  - Performance Testing:
     - Overview: performance-testing/index.md
   - Infrastructure & DevOps:
     - Overview: infrastructure-devops/index.md
-  - Bog:
+  - Blog:
     - Case Studies: blog/case-studies.md
 

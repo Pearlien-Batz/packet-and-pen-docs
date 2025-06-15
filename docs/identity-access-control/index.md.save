@@ -1,15 +1,7 @@
 
 # Install FreeRadius and daloRadius
 
-Runthrough installing FreeRadius 3 and daloRadius on Ubuntu 22.04. Note what version of Freeradius you're installing, it's slightly
-different for FreeRadius 2. I recommend 3 for the smoothest install. If you run into errors with FreeRadius or Apache during
-the install journalctl -xeu freeradius.service and journalctl -xeu apache2.service will point you in the right direction. 
-I found errors most commonly caused by not updating the password and db info, and not having the correct permissions for 
-Apache. 
-
-Let's get started!
-
-**Update System:**
+**Update:**
 
 ```bash
 sudo apt -y update
@@ -25,32 +17,26 @@ sudo apt -y install apache2
 sudo apt -y install php libapache2-mod-php php-{gd,common,mail,mail-mime,mysql,pear,db,mbstring,xml,curl}
 php -v
 ```
-![apt upgrade](../images/apt_apach.png)
-![apt upgrade](../images/apt_php.png)
 
-**Create Mariadb Database**
+**Mariadb Create Database**
 
 ```bash
 sudo apt update
 sudo apt install mariadb-server
 ```
-![apt upgrade](../images/install_mariadb.png)
 
 **Setup MySQL**
 
 To somewhat mimick a production environment I'm going to make a secure password. You have the
-option to change it again if needed. I also removed anonymous users, disallowed remote root
-logins, and removed the test database. Press 'y' to reload privilege tables, and that's all for the sql installation. 
+option to change it again if you need. I also removed anonymous users, disallowed remote root
+logins, and removed the test database. Press y to reload privilige tables, and that's all for the sql installation. 
 ```bash
 sudo mysql_secure_installation
 ```
-![apt upgrade](../images/sql_setup1.png)
-![apt upgrade](../images/sql_setup2.png)
 
 **Create Database**
 
-After MySQL is configured, create your radius database. IDENTIFIED BY "password" << update to any password you prefer.
- Keep track of it, because you'll need to update the daloradius config file with the new password. 
+After the setup go through these steps to create your radius database. IDENTIFIED BY "password", update to any password you prefer. Keep track of it, because you'll need to update the daloradius config file with the new password. 
 
 ```bash
 sudo mysql -u root -p
@@ -59,7 +45,6 @@ GRANT ALL ON radius.* TO radius@localhost IDENTIFIED BY "bananas25unite";
 FLUSH PRIVILEGES;
 QUIT
 ```
-![apt upgrade](../images/radtable_sql.png)
 
 **Install FreeRadius**
 
@@ -145,8 +130,6 @@ Update the database username, password, and database name.
 ```bash
 sudo nano daloradius.php
 ```
-![DaloRadius Config](../images/dalo_config.png)
-
 **Create var directory and its subdirectories, update ownership**
 ```bash
 cd /var/www/daloradius/
@@ -247,11 +230,8 @@ systemctl status freeradius
 ```
 
 **`Access Management portal @ http://your_ip:8001`**
-![apt upgrade](../images/Login.png)
 
 **`Access User Portal @ http://your_ip`**
 
 **`The default login is: administrator // radius`** 
-![apt upgrade](../images/Dashboard.png)
 
-**Thank you and happy Installing!**

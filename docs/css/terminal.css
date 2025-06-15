@@ -1,0 +1,19 @@
+/* docs/css/terminal.css */
+.md-typeset pre code {
+  background: #FFC0CB !important;
+  color: #fffff !important;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+.md-typeset button.md-clipboard.md-icon {
+  /* make the icon itself white */
+  color: #CF9CA4 !important;
+}
+
+
+.md-typeset button.md-clipboard.md-icon:hover svg {
+  fill:  #fff !important;
+  stroke: #fff !important;
+}
