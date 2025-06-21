@@ -2,7 +2,7 @@
 
 The intent of this site is to provide installation documentation
 various tools, and software. Eventually each will be weaved together,
-to become a complete environment. Welcome!
+to become a complete environment. 
 
 
 **Welcome**
