@@ -14,8 +14,8 @@ markdown_extensions:
   - codehilite:
       -linenums: true
 plugins:
-  -search
-  -jinja2-time
+  - search
+  - jinja2-time
 
 nav:
   - Home: index.md
