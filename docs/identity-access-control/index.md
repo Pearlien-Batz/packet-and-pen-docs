@@ -5,7 +5,7 @@ Runthrough installing FreeRadius 3 and daloRadius on Ubuntu 22.04. Note what ver
 different for FreeRadius 2. I recommend 3 for the smoothest install. If you run into errors with FreeRadius or Apache during
 the install journalctl -xeu freeradius.service and journalctl -xeu apache2.service will point you in the right direction. 
 I found errors most commonly caused by not updating the password and db info, and not having the correct permissions for 
-Apache. 
+Apache. You may also need to disable your firewall, or allow ports 1812 and 1813 through the firewall.  
 
 Let's get started!
 
