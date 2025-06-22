@@ -16,7 +16,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - jinja2-time
+
 
 nav:
   - Home: index.md

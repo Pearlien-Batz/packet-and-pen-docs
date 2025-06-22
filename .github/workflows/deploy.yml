@@ -37,7 +37,7 @@ jobs:
       # Step 3: Install MkDocs and the Material theme
       - name: Install dependencies
         run: |
-          pip install mkdocs mkdocs-material mkdocs-jinja2-time
+          pip install mkdocs mkdocs-material
 
       # Step 4: Build the MkDocs site; this creates the "site" folder
       - name: Build site with MkDocs
