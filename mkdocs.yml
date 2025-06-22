@@ -13,6 +13,7 @@ markdown_extensions:
   - pymdownx.highlight
   - codehilite:
       -linenums: true
+
 plugins:
   - search
   - jinja2-time
